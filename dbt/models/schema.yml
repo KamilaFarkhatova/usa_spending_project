@@ -1,0 +1,45 @@
+version: 2
+
+models:
+  - name: int_awards
+    description: "Награды ODS с заполненной датой начала."
+    columns:
+      - name: award_id
+        tests:
+          - not_null
+          - unique
+      - name: award_type_code
+        tests:
+          - not_null
+          - relationships:
+              to: source('federal_spending', 'ods_award_types')
+              field: award_type_code
+
+  - name: int_award_types
+    description: "Типы наград ODS, используемые промежуточной моделью."
+    columns:
+      - name: award_type_code
+        tests:
+          - not_null
+          - unique
+
+  - name: dm_monthly_awards_by_type
+    description: "Число и сумма наград по месяцу начала и типу."
+    columns:
+      - name: month_start
+        tests:
+          - not_null
+      - name: award_type_code
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['A', 'B', 'C', 'D']
+          - relationships:
+              to: ref('int_award_types')
+              field: award_type_code
+      - name: api_awards_count
+        tests:
+          - not_null
+      - name: api_award_amount_total
+        tests:
+          - not_null

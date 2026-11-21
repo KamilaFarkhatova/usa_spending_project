@@ -1,0 +1,25 @@
+{
+  "name": "sink-${PROJECT_LOGIN}",
+  "config": {
+    "connector.class": "io.confluent.connect.jdbc.JdbcSinkConnector",
+    "tasks.max": "1",
+    "topics": "${PROJECT_LOGIN}.${PROJECT_LOGIN}.recipients",
+    "connection.url": "jdbc:postgresql://${PGHOST}:${PGPORT}/${PGDATABASE}",
+    "connection.username": "${SINK_USER}",
+    "connection.password": "${SINK_PASSWORD}",
+    "table.name.format": "${PROJECT_LOGIN}_ods.ods_recipients",
+    "insert.mode": "upsert",
+    "pk.mode": "record_key",
+    "pk.fields": "recipient_id",
+    "delete.enabled": "true",
+    "auto.create": "false",
+    "auto.evolve": "false",
+    "key.converter": "org.apache.kafka.connect.json.JsonConverter",
+    "key.converter.schemas.enable": "true",
+    "value.converter": "org.apache.kafka.connect.json.JsonConverter",
+    "value.converter.schemas.enable": "true",
+    "transforms": "unwrap",
+    "transforms.unwrap.type": "io.debezium.transforms.ExtractNewRecordState",
+    "transforms.unwrap.delete.tombstone.handling.mode": "delete-to-tombstone"
+  }
+}

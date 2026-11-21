@@ -1,0 +1,34 @@
+award_type_code,award_type_group,award_type_name
+A,contracts,BPA Call
+B,contracts,Purchase Order
+C,contracts,Delivery Order
+D,contracts,Definitive Contract
+06,direct_payments,Direct Payment for Specified Use
+10,direct_payments,Direct Payment with Unrestricted Use
+F006,direct_payments,Direct Payment for Specified Use
+F007,direct_payments,Direct Payment with Unrestricted Use
+02,grants,Block Grant
+03,grants,Formula Grant
+04,grants,Project Grant
+05,grants,Cooperative Agreement
+F001,grants,Grant
+F002,grants,Cooperative Agreement
+IDV_A,idvs,GWAC Government Wide Acquisition Contract
+IDV_B,idvs,"IDC Multi-Agency Contract, Other Indefinite Delivery Contract"
+IDV_B_A,idvs,IDC Indefinite Delivery Contract / Requirements
+IDV_B_B,idvs,IDC Indefinite Delivery Contract / Indefinite Quantity
+IDV_B_C,idvs,IDC Indefinite Delivery Contract / Definite Quantity
+IDV_C,idvs,FSS Federal Supply Schedule
+IDV_D,idvs,BOA Basic Ordering Agreement
+IDV_E,idvs,BPA Blanket Purchase Agreement
+07,loans,Direct Loan
+08,loans,Guaranteed/Insured Loan
+F003,loans,Direct Loan
+F004,loans,Loan Guarantee
+-1,other_financial_assistance,Not Specified
+09,other_financial_assistance,Insurance
+11,other_financial_assistance,Other Financial Assistance
+F005,other_financial_assistance,Indemnity / Insurance (non-loan)
+F008,other_financial_assistance,Asset Forfeiture / Equitable Sharing
+F009,other_financial_assistance,"Sale, Exchange, or Donation of Property and Goods"
+F010,other_financial_assistance,Other Financial Assistance

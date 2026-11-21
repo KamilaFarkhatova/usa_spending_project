@@ -1,0 +1,24 @@
+{
+  "name": "recipients-source-${PROJECT_LOGIN}",
+  "config": {
+    "connector.class": "io.debezium.connector.postgresql.PostgresConnector",
+    "tasks.max": "1",
+    "database.hostname": "${PGHOST}",
+    "database.port": "${PGPORT}",
+    "database.user": "${CDC_USER}",
+    "database.password": "${CDC_PASSWORD}",
+    "database.dbname": "${PGDATABASE}",
+    "topic.prefix": "${PROJECT_LOGIN}",
+    "plugin.name": "pgoutput",
+    "slot.name": "${PROJECT_LOGIN}_recipients_slot",
+    "slot.drop.on.stop": "false",
+    "publication.name": "${PROJECT_LOGIN}_recipients_pub",
+    "publication.autocreate.mode": "disabled",
+    "table.include.list": "${PROJECT_LOGIN}.recipients",
+    "snapshot.mode": "initial",
+    "key.converter": "org.apache.kafka.connect.json.JsonConverter",
+    "key.converter.schemas.enable": "true",
+    "value.converter": "org.apache.kafka.connect.json.JsonConverter",
+    "value.converter.schemas.enable": "true"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "endpoint": "https://api.usaspending.gov/api/v2/search/spending_by_award/",
+  "ds": "2024-11-01",
+  "award_ids": [],
+  "captured_at_utc": "2026-11-12T19:48:29.888484+00:00",
+  "pages": []
+}

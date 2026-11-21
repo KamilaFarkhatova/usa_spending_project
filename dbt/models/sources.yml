@@ -1,0 +1,10 @@
+version: 2
+
+sources:
+  - name: federal_spending
+    schema: "{{ env_var('PROJECT_LOGIN') }}_ods"
+    tables:
+      - name: ods_awards
+        description: "Одна запись на федеральную награду из API."
+      - name: ods_award_types
+        description: "Справочник кодов и названий типов наград."
